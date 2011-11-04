@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Portal</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'jquery-mobile/jquery.mobile-1.0rc2.min.css' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery.mobile-1.0rc2.min.js' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

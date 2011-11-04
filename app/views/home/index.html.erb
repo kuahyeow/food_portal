@@ -1,0 +1,33 @@
+<div data-role="page"> 
+  <div data-role="header">
+    <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Food Portal</h1>
+  </div>
+  <div data-role="content" style="padding-top: 0px">
+    <h3>Categories</h3>
+    <div class="ui-grid-a">
+      <% ['Fruit & Vege', 'Meat & Fish', 'Wine & Beer', 'Personal care'].each do |category| %>
+        <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
+          <div class="ui-bar ui-bar-c" style="height:100px">
+            <h4><%= category %></h4>
+            <%= tactile_image(category) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+    <h3>Items</h3>
+    <div class="ui-grid-a">
+      <% ['Tomato on Vine', 'Salmon', '100g Cat Food'].each do |category| %>
+        <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
+          <div class="ui-bar ui-bar-c" style="height:80px"><%=category %></div>
+          <a href="index.html" data-role="button" data-icon="plus" data-theme="c">Add</a>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+  <div data-role="footer">
+    <h4 class="" tabindex="0" role="heading" aria-level="1">Made with care</h4>
+  </div>
+</div>
