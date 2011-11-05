@@ -8,10 +8,11 @@
 
     <div>
       <% if @grouped_items.empty? %>
-        <%= 'No items yet, ' if @grouped_items.empty? %><%= link_to 'buy some?', root_path %>
+        <p><%= 'No items yet, ' if @grouped_items.empty? %><%= link_to 'buy some?', root_path %></p>
       <% end %>
     </div>
 
+    <% unless @grouped_items.empty? %>
     <ul data-role="listview" data-theme="g" style="margin-bottom: 30px;">
       <%= render :partial => 'grouped_items', :object => @grouped_items %>
       <li class="ui-li ui-li-static ui-body-c ui-li-has-count">
@@ -36,6 +37,7 @@
     <div>
       <a href="<%= thanks_path %>" data-role="button" data-rel="dialog" data-theme="b">Process Checkout</a>
     </div>
+    <% end %>
 
   </div>
   <div data-role="footer">
