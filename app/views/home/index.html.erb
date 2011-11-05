@@ -4,20 +4,7 @@
     <a href="<%= checkout_path %>" class="ui-btn-right" data-icon="arrow-r" data-theme="b">Checkout (<%= @items.size %>)</a>
   </div>
   <div data-role="content" style="padding-top: 0px">
-    <h3>Categories</h3>
-    <div class="ui-grid-b">
-      <% ['Fruit & Vege', 'Meat & Fish', 'Wine & Beer', 'Personal care', 'Baby products', 'Canned Food'].each do |category| %>
-        <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-c').to_a) do %>
-          <div class="ui-bar ui-bar-c" style="height:80px; text-align:center">
-            <h4><%= category %></h4><br/>
-            <%= tactile_image(category, :style => 'width: 60px;') %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-
-    <h3>Items</h3>
+    <h3>Popular Items</h3>
     <div class="ui-grid-a">
       <% ['Tomatoes', 'Salmon 100g', 'Canned Soup', 'Nappies'].each do |item| %>
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
@@ -30,6 +17,17 @@
       <% end %>
     </div>
 
+    <h3>Categories</h3>
+    <div class="ui-grid-b">
+      <% ['Fruit & Vege', 'Meat & Fish', 'Wine & Beer', 'Personal care', 'Baby products', 'Canned Food'].each do |category| %>
+        <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-c').to_a) do %>
+          <div class="ui-bar ui-bar-c" style="height:80px; text-align:center">
+            <h4><%= category %></h4><br/>
+            <%= tactile_image(category, :style => 'width: 60px;') %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <%= render :partial => 'footer' %>
 </div>
