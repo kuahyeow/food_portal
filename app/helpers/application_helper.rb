@@ -13,4 +13,8 @@ module ApplicationHelper
     end
     image_tag image_name, options
   end
+
+  def price(name)
+    session[:prices][name] ||= rand(10) + rand(1) + rand(0.5)
+  end
 end

@@ -30,6 +30,8 @@ class HomeController < ApplicationController
 
   protected
   def initialise_shopping_list
+    session[:prices] ||= {}
+
     session[:lists] ||= []
     session[:current_list] ||= 'My List'
     if params[:selected_list]

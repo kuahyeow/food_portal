@@ -1,7 +1,7 @@
 <div data-role="page"> 
   <div data-role="header">
     <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Shop</h1>
-    <a href="<%= checkout_path %>" class="ui-btn-right" data-icon="arrow-r" data-theme="d">Checkout (<%= @items.size %>)</a>
+    <a href="<%= checkout_path %>" class="ui-btn-right" data-icon="arrow-r" data-theme="b">Checkout (<%= @items.size %>)</a>
   </div>
   <div data-role="content" style="padding-top: 0px">
     <h3>Categories</h3>
@@ -25,7 +25,7 @@
             <h4><%= item %></h4><br/>
             <%= tactile_image(item) %>
           </div>
-          <a href="<%= add_item_path(item) %>" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency rand(10) + rand(1) + rand(0.5) %></a>
+          <a href="<%= add_item_path(item) %>" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency price(item) %></a>
         <% end %>
       <% end %>
     </div>

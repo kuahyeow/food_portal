@@ -1,0 +1,3 @@
+<% grouped_items.each do |name, items| %>
+  <%= render :partial => 'list_item', :locals => {:name => name, :items => items} %>
+<% end %>

@@ -9,18 +9,14 @@
 
     <%= 'No items yet' if @grouped_items.empty? %>
     <ul data-role="listview" data-theme="g" style="margin-bottom: 20px;">
-    <% @grouped_items.each do |name, items| %>
-      <%= render :partial => 'list_item', :locals => {:name => name, :items => items} %>
-    <% end %>
+      <%= render :partial => 'grouped_items', :object => @grouped_items %>
     </ul>
 
     <% @other_lists.each do |list_name, grouped_items| %>
       <% next if list_name == @current_list %>
       <h3><%= list_name %></h3>
       <%= link_to 'Use', my_lists_path(:selected_list => list_name) %>
-      <% grouped_items.each do |name, items| %>
-        <%= render :partial => 'list_item', :locals => {:name => name, :items => items} %>
-      <% end %>
+      <%= render :partial => 'grouped_items', :object => grouped_items %>
     <% end %>
 
     <h3>Create new list</h3>
@@ -28,7 +24,7 @@
       <label for="list_name">List Name:</label>
       <%= text_field_tag 'list_name' %>
 
-      <%= submit_tag 'Create List' %>
+      <%= submit_tag 'Create List', 'data-theme' => 'b' %>
     <% end %>
 
   </div>

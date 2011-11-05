@@ -1,4 +1,4 @@
 <li class="ui-li ui-li-static ui-body-c ui-li-has-count">
-  <%= name %>
+  <%= name %><br/><%= number_to_currency items.size * price(name) %>
   <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= items.size %></span>
 </li>
