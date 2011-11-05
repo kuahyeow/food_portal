@@ -24,7 +24,7 @@
     <div class="ui-grid-b">
       <% ['Fruit & Vege', 'Meat & Fish', 'Wine & Beer', 'Personal care', 'Baby products', 'Canned Food'].each do |category| %>
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-c').to_a) do %>
-          <div class="ui-bar" style="height:80px; text-align:center">
+          <div class="ui-bar" style="height:95px; text-align:center">
             <h4><%= category %></h4><br/>
             <%= link_to tactile_image(category, :style => 'width: 60px;'), '' %>
           </div>
