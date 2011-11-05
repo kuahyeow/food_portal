@@ -6,6 +6,12 @@
   <div data-role="content" style="padding-top: 0px">
     <h3>Items</h3>
 
+    <div>
+      <% if @grouped_items.empty? %>
+        <%= 'No items yet, ' if @grouped_items.empty? %><%= link_to 'buy some?', root_path %>
+      <% end %>
+    </div>
+
     <ul data-role="listview" data-theme="g">
     <% @grouped_items.each do |name, items| %>
       <%= render :partial => 'list_item', :locals => {:name => name, :items => items} %>
