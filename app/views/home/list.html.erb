@@ -1,11 +1,11 @@
 <div data-role="page"> 
   <div data-role="header">
-    <a href="<%= root_path %>" data-icon="back">Back</a>
     <h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><%= @current_list %></h1>
+    <a href="<%= checkout_path %>" class="ui-btn-right" data-icon="arrow-r" data-theme="b">Checkout (<%= @items.size %>)</a>
   </div>
   <div data-role="content" style="padding-top: 0px">
-    <h3><%= @current_list %></h3>
-    <p><%= link_to 'Checkout', checkout_path %></p>
+    <h3><%= @current_list %>
+    </h3>
 
     <%= 'No items yet' if @grouped_items.empty? %>
     <ul data-role="listview" data-theme="g" style="margin-bottom: 20px;">
@@ -14,9 +14,10 @@
 
     <% @other_lists.each do |list_name, grouped_items| %>
       <% next if list_name == @current_list %>
-      <h3><%= list_name %></h3>
-      <%= link_to 'Use', my_lists_path(:selected_list => list_name) %>
+      <h3><%= list_name %>
+      </h3>
       <%= render :partial => 'grouped_items', :object => grouped_items %>
+      <%= link_to 'Use this list', my_lists_path(:selected_list => list_name), 'data-role' => 'button', 'data-theme' => 'c', 'data-inline' => 'true'  %>
     <% end %>
 
     <h3>Create new list</h3>
