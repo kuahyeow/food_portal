@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     item = params[:item]
     price = params[:price]
     @items << item
+    # TODO show item that was added
     redirect_to :action => :index
   end
 

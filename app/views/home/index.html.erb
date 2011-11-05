@@ -8,7 +8,7 @@
     <div class="ui-grid-a">
       <% ['Tomatoes', 'Salmon 100g', 'Canned Soup', 'Nappies'].each do |item| %>
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
-          <div class="ui-bar ui-bar-c" style="height:120px; text-align:center">
+          <div class="ui-bar ui-bar" style="height:120px; text-align:center">
             <h4><%= item %></h4><br/>
             <%= link_to tactile_image(item), add_item_path(item) %>
           </div>
@@ -21,7 +21,7 @@
     <div class="ui-grid-b">
       <% ['Fruit & Vege', 'Meat & Fish', 'Wine & Beer', 'Personal care', 'Baby products', 'Canned Food'].each do |category| %>
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-c').to_a) do %>
-          <div class="ui-bar ui-bar-c" style="height:80px; text-align:center">
+          <div class="ui-bar" style="height:80px; text-align:center">
             <h4><%= category %></h4><br/>
             <%= tactile_image(category, :style => 'width: 60px;') %>
           </div>
