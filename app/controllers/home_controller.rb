@@ -18,9 +18,6 @@ class HomeController < ApplicationController
   end
 
   def list
-    # TODO
-    # show another list
-    # switch to another list
     @grouped_items = @items.group_by(&:to_s)
 
     @other_lists = session[:lists].map{|l| [l[:list_name], l[:items].group_by(&:to_s)]}
