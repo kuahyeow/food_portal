@@ -15,14 +15,26 @@
     <ul data-role="listview" data-theme="g" style="margin-bottom: 30px;">
       <%= render :partial => 'grouped_items', :object => @grouped_items %>
       <li class="ui-li ui-li-static ui-body-c ui-li-has-count">
-        TOTAL to Pay
-        <%= number_to_currency @grouped_items.sum{|name, items| items.size * price(name)} %>
+        <div class="ui-grid-a">
+          <div class="ui-block-a">TOTAL to Pay</div>
+          <div class="ui-block-b"><%= number_to_currency @grouped_items.sum{|name, items| items.size * price(name)} %></div>
+        </div>
         <span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= @grouped_items.map{|name, items| items.size}.sum %></span>
       </li>
     </ul>
 
     <div>
-      <a href="index.html" data-role="button" data-theme="b">Process Checkout</a>
+      <h4>Choose a payment method</h4>
+      <p>[DEFAULT] Credit Card: <br/>4111-XXXX-XXXX-XX11</p>
+    </div>
+
+    <div>
+      <h4>Delivery Address</h4>
+      <p>Home: <br/>42 Pleasant St, Wellington</p>
+    </div>
+
+    <div>
+      <a href="<%= thanks_path %>" data-role="button" data-rel="dialog" data-theme="b">Process Checkout</a>
     </div>
 
   </div>

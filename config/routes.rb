@@ -5,6 +5,7 @@ FoodPortal::Application.routes.draw do
   match 'checkout' => 'home#checkout'
   match 'my_lists' => 'home#list'
   match 'create_list' => 'home#create_list'
+  match 'thanks' => 'home#thanks'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
