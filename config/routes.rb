@@ -1,6 +1,11 @@
 FoodPortal::Application.routes.draw do
 
   root :to => 'home#index'
+  match 'add_item/:item' => 'home#add_item', :as => 'add_item'
+  match 'checkout' => 'home#checkout'
+  match 'my_lists' => 'home#list'
+  match 'create_list' => 'home#create_list'
+  match 'use_list/:selected_list' => 'home#use_list', :as => 'use_list'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,7 @@
 <div data-role="page"> 
   <div data-role="header">
-    <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Food Portal</h1>
+    <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Shop</h1>
+    <a href="<%= checkout_path %>" class="ui-btn-right" data-icon="arrow-r" data-theme="d">Checkout (<%= @items.size %>)</a>
   </div>
   <div data-role="content" style="padding-top: 0px">
     <h3>Categories</h3>
@@ -18,19 +19,17 @@
 
     <h3>Items</h3>
     <div class="ui-grid-a">
-      <% ['Tomatoes', 'Salmon 100g', 'Canned <D-r>Soup', 'Nappies'].each do |category| %>
+      <% ['Tomatoes', 'Salmon 100g', 'Canned Soup', 'Nappies'].each do |item| %>
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
           <div class="ui-bar ui-bar-c" style="height:100px; text-align:center">
-            <h4><%= category %></h4><br/>
-            <%= tactile_image(category) %>
+            <h4><%= item %></h4><br/>
+            <%= tactile_image(item) %>
           </div>
-          <a href="index.html" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency rand(10) + rand(1) + rand(0.5) %></a>
+          <a href="<%= add_item_path(item) %>" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency rand(10) + rand(1) + rand(0.5) %></a>
         <% end %>
       <% end %>
     </div>
 
   </div>
-  <div data-role="footer">
-    <h4 class="" tabindex="0" role="heading" aria-level="1">Made with care</h4>
-  </div>
+  <%= render :partial => 'footer' %>
 </div>
