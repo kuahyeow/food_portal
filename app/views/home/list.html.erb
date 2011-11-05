@@ -4,8 +4,7 @@
     <a href="<%= checkout_path %>" class="ui-btn-right" data-icon="arrow-r" data-theme="b">Checkout (<%= @items.size %>)</a>
   </div>
   <div data-role="content" style="padding-top: 0px">
-    <h3><%= @current_list %>
-    </h3>
+    <h3><%= @current_list %></h3>
 
     <%= 'No items yet' if @grouped_items.empty? %>
     <ul data-role="listview" data-theme="g" style="margin-bottom: 20px;">
@@ -14,9 +13,10 @@
 
     <% @other_lists.each do |list_name, grouped_items| %>
       <% next if list_name == @current_list %>
-      <h3><%= list_name %>
-      </h3>
-      <%= render :partial => 'grouped_items', :object => grouped_items %>
+      <h3><%= list_name %></h3>
+      <ul data-role="listview" data-theme="g" style="margin-bottom: 20px;">
+        <%= render :partial => 'grouped_items', :object => grouped_items %>
+      </ul>
       <%= link_to 'Use this list', my_lists_path(:selected_list => list_name), 'data-role' => 'button', 'data-theme' => 'c', 'data-inline' => 'true'  %>
     <% end %>
 

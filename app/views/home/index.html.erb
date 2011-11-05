@@ -21,9 +21,9 @@
     <div class="ui-grid-a">
       <% ['Tomatoes', 'Salmon 100g', 'Canned Soup', 'Nappies'].each do |item| %>
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
-          <div class="ui-bar ui-bar-c" style="height:100px; text-align:center">
+          <div class="ui-bar ui-bar-c" style="height:120px; text-align:center">
             <h4><%= item %></h4><br/>
-            <%= tactile_image(item) %>
+            <%= link_to tactile_image(item), add_item_path(item) %>
           </div>
           <a href="<%= add_item_path(item) %>" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency price(item) %></a>
         <% end %>
