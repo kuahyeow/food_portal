@@ -10,7 +10,7 @@
         <%= content_tag :div, :class => cycle(*('ui-block-a'..'ui-block-b').to_a) do %>
           <div class="ui-bar ui-bar" style="height:120px; text-align:center">
             <h4><%= item %></h4><br/>
-            <%= link_to tactile_image(item), add_item_path(item) %>
+            <%= link_to tactile_image(item), add_item_path(item), :rel => 'external' %>
           </div>
           <a href="<%= add_item_path(item) %>" rel="external" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency price(item) %></a>
         <% end %>
