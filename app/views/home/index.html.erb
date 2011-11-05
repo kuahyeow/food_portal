@@ -12,7 +12,7 @@
             <h4><%= item %></h4><br/>
             <%= link_to tactile_image(item), add_item_path(item) %>
           </div>
-          <a href="<%= add_item_path(item) %>" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency price(item) %></a>
+          <a href="<%= add_item_path(item) %>" rel="external" data-role="button" data-icon="plus" data-theme="c"><%= number_to_currency price(item) %></a>
         <% end %>
       <% end %>
     </div>
